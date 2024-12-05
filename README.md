@@ -23,24 +23,121 @@ API to create , get , update and delete tours and also with users and reviews , 
   * all staff for reviews
 <hr>
 
-<h1>this is an examples on tour route to choose specific fields</h1>
-<code>127.0.0.1:3000/api/v1/tours?fields=name,price,duration</code>
-<code>127.0.0.1:3000/api/v1/tours/5c88fa8cf4afda39709c295d</code>
-<code>127.0.0.1:3000/api/v1/tours/best-5-tours</code>
-<code>127.0.0.1:3000/api/v1/tours/tours-within/distance/950/center/34.050653, -118.240979/unit/km</code>
-<code>127.0.0.1:3000/api/v1/tours/distances/center/34.050653,-118.240979/unit/kg</code>
+![GET](https://img.shields.io/badge/GET-blue) getTour
+### `/api/v1/tours/5c88fa8cf4afda39709c295d`
+```
+{
+    "startLocation" : {
+        "type" : "Point",
+        "coordinates" : [15,15],
+        "address" : "EGYPT",
+        "description" : "hello from EGYPT"
+    },
+    "name" : "test test test test test test",
+    "duration" : 5,
+    "ratingsAverage" : 5,
+    "maxGroupSize" : 15,
+    "difficulty" : "easy",
+    "price" : 500,
+    "locations" : [
+        {
+            "coordinates" : [5,5]
+        }
+    ],
+    "imageCover" : "png.png",
+    "summary" : "test",
+    "guides" : [
+        "6706ed7c82d7532034c08d82",
+        "6706ed8682d7532034c08d84"
+    ]
+}
+```
+![GET](https://img.shields.io/badge/GET-blue) createTour
+### `127.0.0.1:3000/api/v1/tours`
+```
+ {
+    "startLocation" : {
+        "type" : "Point",
+        "coordinates" : [15,15],
+        "address" : "EGYPT",
+        "description" : "hello from EGYPT"
+    },
+    "name" : "test test test test test test",
+    "duration" : 5,
+    "ratingsAverage" : 5,
+    "maxGroupSize" : 15,
+    "difficulty" : "easy",
+    "price" : 500,
+    "locations" : [
+        {
+            "coordinates" : [5,5]
+        }
+    ],
+    "imageCover" : "png.png",
+    "summary" : "test",
+    "guides" : [
+        "6706ed7c82d7532034c08d82",
+        "6706ed8682d7532034c08d84"
+    ]
+}
+```
+<hr>
+
+![POST](https://img.shields.io/badge/GET-blue) signup
+### `127.0.0.1:3000/api/v1/users/signup`
+```
+ {
+    "name" : "kareem9",
+    "email" : "hello@kareem99999.io",
+    "password" : "test1234",
+    "passwordConfirm" : "test1234",
+    "role" : "user"
+}
+```
+![POST](https://img.shields.io/badge/GET-blue) login
+### `127.0.0.1:3000/api/v1/users/login`
+```
+{
+    "email" : "admin@natours.io",
+    "password" : ".........."
+}
+```
+![POST](https://img.shields.io/badge/GET-blue) forgotPassword
+### `Natour.ioapi/v1/users/forgotPassword`
+```
+ {
+    "email" : "hello@kareem.io"
+}
+```
+![POST](https://img.shields.io/badge/GET-blue) resetPassword
+### `Natour.ioapi/v1/users/resetPassword/f95e343329a31f3b81af15d455fc07929c7dc1d57be4175ff56a1f1e4339ac30`
+```
+ {
+    "password" : "123456kareem",
+    "passwordConfirm" : "123456kareem"
+}
+```
+![POST](https://img.shields.io/badge/GET-blue) createReview
+### `/api/v1/reviews`
+```
+ {
+    "review" : "amazing!",
+    "rating" : 5,
+    "tour" : "6706f083d1888357882ab93d",
+    "user" : "6706ed8682d7532034c08d84"
+}
+```
+
+![POST](https://img.shields.io/badge/GET-blue) create review on tour
+### `Natour.ioapi/v1/tours/5c88fa8cf4afda39709c295d/reviews`
+```
+ {
+    "rating" : 4,
+    "review" : "amazing tour !"
+}
+```
 <br>
-<h1>this is an examples on user route to choose specific fields</h1>
-<code>127.0.0.1:3000/api/v1/users</code>
-<code>127.0.0.1:3000/api/v1/users/6706ed8d82d7532034c08d86</code>
-<code>127.0.0.1:3000/api/v1/users/signup</code>
-<code>127.0.0.1:3000/api/v1/users/forgotPassword</code>
-<code>127.0.0.1:3000/api/v1/users/resetPassword/f95e343329a31f3b81af15d455fc07929c7dc1d57be4175ff56a1f1e4339ac30</code>
-<br>
-<h1>this is an examples on review route to choose specific fields</h1>
-<code>127.0.0.1:3000/api/v1/reviews</code>
-<code>127.0.0.1:3000/api/v1/reviews?rating[gte]=5</code>
-<code>127.0.0.1:3000/api/v1/tours/5c88fa8cf4afda39709c295d/reviews</code>
-<code>127.0.0.1:3000/api/v1/reviews/6712c2dc2cd0d722e00e79d5</code>
-<code>127.0.0.1:3000/api/v1/tours/6706f083d1888357882ab93d/reviews</code>
-<br>
+<hr>
+ <h5>there are many routes and if you want to know them read documentation</h5>
+
+ * start [API](https://documenter.getpostman.com/view/38505131/2sAXxWb9xb)
